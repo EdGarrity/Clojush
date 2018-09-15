@@ -244,9 +244,9 @@
                        (assoc gen-indy
                               :errors
                               (doall
-                               (for [input-start (range 0 number-of-trading-rows)]
-                                 (eval-test-case input-start gen-indy))
-                               ;; (pmap #(eval-test-case % gen-indy) (range 0 number-of-trading-rows))
+                               ;; (for [input-start (range 0 number-of-trading-rows)]
+                               ;;   (eval-test-case input-start gen-indy))
+                               (pmap #(eval-test-case % gen-indy) (range 0 number-of-trading-rows))
                                ))))
 
    :error-threshold 0.01
@@ -273,6 +273,15 @@
    :print-csv-logs true
    :print-edn-logs true
    :print-json-logs true
+
+   :csv-log-filename "src/clojush/genesis/test-results/log.csv"
+   ;; The file to print CSV log to.
+
+   :edn-log-filename "src/clojush/genesis/test-results/log.edn"
+   ;; The file to print EDN log to.
+
+   :json-log-filename "src/clojush/genesis/test-results/log.json"
+   ;; The file to print JSON log to.
 
    :csv-columns [:generation :location :parent-uuids :genetic-operators :push-program-size :plush-genome-size :push-program :plush-genome :total-error :test-case-errors]
    ;; The columns to include in a printed CSV beyond the generation and individual. Options
