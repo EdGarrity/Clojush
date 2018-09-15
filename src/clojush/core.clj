@@ -16,7 +16,8 @@
 ;; for more details.
 
 (ns clojush.core
-  (:require [clojush.pushgp.record :as r])
+  (:require [clojush.pushgp.record :as r]
+            [clojush.genesis.genesis])
   (:use [clojush.pushgp pushgp report])
   (:gen-class))
 

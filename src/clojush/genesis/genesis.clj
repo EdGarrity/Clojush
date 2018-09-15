@@ -1,5 +1,4 @@
 ;; genesis.clj
-
 (ns clojush.genesis.genesis
   (:use [clojush.pushgp.pushgp]
         [clojush.pushstate]
@@ -10,12 +9,13 @@
         [clojush args random util globals]
         [clojush.individual]
         [clojush.translate])
-  (:require [clj-http.client :as client]
+  (:require 
+   ;; [clj-http.client :as client]
             [clojure.data.json :as json]
-	    [semantic-csv.core :refer :all]
-	    [clojure.data.csv :as cd-csv]
+            [semantic-csv.core :refer :all]
+            [clojure.data.csv :as cd-csv]
             [clojure-csv.core :as csv]
-	    [clojure.java.io :as io])
+            [clojure.java.io :as io])
 )
 
 (set! *warn-on-reflection* true)
@@ -35,7 +35,7 @@
   "Loads the data file into a data table"
   []
   (drop 1 
-        (with-open [in-file (io/reader "dataTable.csv")]
+        (with-open [in-file (io/reader "src/clojush/genesis/test-data/dataTable.csv")]
           (->>
            (csv/parse-csv in-file)
            ;; mappify
