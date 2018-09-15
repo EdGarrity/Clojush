@@ -257,7 +257,7 @@
                              (fn [] (lrand)))                               ;; random floats
                             )       
 
-   :use-single-thread true
+   :use-single-thread false
    :population-size 10
    :max-generations 3
    :epigenetic-markers []
