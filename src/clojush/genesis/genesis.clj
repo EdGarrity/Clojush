@@ -114,19 +114,19 @@
 ;; ;; Brokerage utilities
 ;; ;;
 
-(def brokerage-account-fields '(:cash :stock :transaction-fee))
+;; (def brokerage-account-fields '(:cash :stock :transaction-fee))
 
-(defmacro define-brokerage-account-state-record-type []
- `(defrecord ~'BrokerageAccountState [~@(map keyword->symbol brokerage-account-fields)]))
+;; (defmacro define-brokerage-account-state-record-type []
+;;  `(defrecord ~'BrokerageAccountState [~@(map keyword->symbol brokerage-account-fields)]))
 
-(define-brokerage-account-state-record-type)
+;; (define-brokerage-account-state-record-type)
 
-(let [empty-brokerage-account-state (map->BrokerageAccountState {:cash 0.0
-                                                                 :stock 0
-                                                                 :transaction-fee transaction-fee})]
-  (defn make-brokerage-account
-    "Returns an empty brokerage account state."
-    [] empty-brokerage-account-state))
+;; (let [empty-brokerage-account-state (map->BrokerageAccountState {:cash 0.0
+;;                                                                  :stock 0
+;;                                                                  :transaction-fee transaction-fee})]
+;;   (defn make-brokerage-account
+;;     "Returns an empty brokerage account state."
+;;     [] empty-brokerage-account-state))
 
 
 (defn update-brokerage-account 
@@ -203,7 +203,8 @@
 (defn eval-test-case 
   "Evaluates a test case by processing a year's worth of input and returns the aggregate error"
   [input-start individual]
-  (loop [brokerage-account (transient (make-brokerage-account))
+  ;; (loop [brokerage-account (transient (make-brokerage-account))
+  (loop [brokerage-account (transient {:cash 0.0 :stock 0 :transaction-fee transaction-fee})
          row input-start]
     (let [state (run-push (:program individual)
                           (push-item row :input
