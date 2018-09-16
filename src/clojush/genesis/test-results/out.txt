@@ -1,5 +1,5 @@
-;; Connected to nREPL server - nrepl://localhost:51098
-;; CIDER 0.17.0 (Andaluc a), nREPL 0.2.13
+;; Connected to nREPL server - nrepl://localhost:52702
+;; CIDER 0.18.0 (Saigon), nREPL 0.2.13
 ;; Clojure 1.8.0, Java 1.8.0_172
 ;;     Docs: (doc function-name)
 ;;           (find-doc part-of-name)
@@ -48,12 +48,15 @@ alignment-deviation = 100
 alternation-rate = 0.1
 atom-generators = (code_atom genome_uniform_tag_mutation code_car print_newline integer_sub integer_inc boolean_stackdepth return_exec_pop zip_dup_items integer_tag_string_instruction vector_integer_eq boolean_pop genome_close_inc string_fromchar vector_string_shove zip_yankdup genome_new genome_gene_genome_instruction vector_float_yankdup exec_yankdup gtm_bounce2 vector_integer_shove integer_yankdup string_flush boolean_swap zip_empty exec_shove vector_boolean_yank code_eq exec_y boolean_yank integer_eq genome_silence string_butlast code_contains string_conjchar code_do*count vector_float_last genome_uniform_instruction_mutation genome_pop string_substring integer_mult vector_string_dup_times code_length vector_integer_dup boolean_or code_position boolean_empty zip_fromcode print_vector_string vector_boolean_swap exec_s_when_autoconstructing return_frominteger char_dup_items vector_float_pushall return_genome_pop genome_gene_close char_iswhitespace code_cdr exec_do*vector_integer vector_string_replacefirst string_first vector_boolean_first exec_do*while exec_string_iterate string_indexofchar vector_float_replace integer_fromstring code_list gtm_write_close code_swap char_frominteger genome_gene_randomize vector_integer_emptyvector vector_string_eq exec_dup_items vector_float_butlast boolean_dup_items genome_uniform_string_mutation exec_empty zip_end? exec_fromzipnode string_shove gtm_inc_delay vector_boolean_pushall zip_insert_left_fromcode gtm_blank1 exec_rot integer_tag_integer_instruction vector_string_concat vector_float_indexof genome_instruction_eq code_pop vector_string_subvec vector_integer_swap code_subst char_pop return_string_pop zip_yank exec_dup ...)
 csv-columns = [:generation :location :parent-uuids :genetic-operators :push-program-size :plush-genome-size :push-program :plush-genome :total-error :test-case-errors]
+csv-log-filename = src/clojush/genesis/test-results/log.csv
 edn-additional-keys = [:generation :location :push-program-size :plush-genome-size]
 edn-keys = [:uuid :parent-uuids :genetic-operators :program :genome :total-error :errors]
+edn-log-filename = src/clojush/genesis/test-results/log.edn
 epigenetic-markers = []
-error-function = #function[clojush.genesis.genesis/fn--15589]
+error-function = #function[clojush.genesis.genesis/fn--13118]
 error-threshold = 0.01
 genetic-operator-probabilities = {:alternation 0.5, :uniform-mutation 0.5}
+json-log-filename = src/clojush/genesis/test-results/log.json
 json-log-program-strings = true
 log-fitnesses-for-all-cases = true
 max-generations = 3
@@ -94,25 +97,26 @@ autoconstructive-tag-types = [:integer :boolean :exec :float :char :string :code
 close-increment-rate = 0.2
 close-parens-probabilities = [0.772 0.206 0.021 0.001]
 csv-columns = [:generation :location :parent-uuids :genetic-operators :push-program-size :plush-genome-size :push-program :plush-genome :total-error :test-case-errors]
-csv-log-filename = log.csv
+csv-log-filename = src/clojush/genesis/test-results/log.csv
 decimation-ratio = 1
 decimation-tournament-size = 2
 edn-additional-keys = [:generation :location :push-program-size :plush-genome-size]
 edn-keys = [:uuid :parent-uuids :genetic-operators :program :genome :total-error :errors]
-edn-log-filename = log.edn
+edn-log-filename = src/clojush/genesis/test-results/log.edn
 epigenetic-markers = []
 epsilon-lexicase-epsilon = nil
 epsilon-lexicase-probability = 1
-error-function = #function[clojush.genesis.genesis/fn--15589]
+error-function = #function[clojush.genesis.genesis/fn--13118]
 error-threshold = 0.01
 evalpush-limit = 150
 evalpush-time-limit = 0
 exit-on-success = true
 final-report-simplifications = 1000
 genetic-operator-probabilities = {:alternation 0.5, :uniform-mutation 0.5}
+genome-representation = :plush
 improvement-discount = 0.5
 individuals-for-novelty-archive-per-generation = 0
-json-log-filename = log.json
+json-log-filename = src/clojush/genesis/test-results/log.json
 json-log-program-strings = true
 label = nil
 lexicase-leakage = 0.1
@@ -130,6 +134,7 @@ novelty-distance-metric = :euclidean
 novelty-number-of-neighbors-k = 25
 parent-reversion-probability = 1.0
 parent-selection = :epsilon-lexicase
+plushy-close-probability = :automatic
 pop-when-tagging = true
 population-size = 10
 print-ancestors-of-solution = false
@@ -146,7 +151,7 @@ print-timings = false
 problem-specific-initial-report = #function[clojush.pushgp.report/default-problem-specific-initial-report]
 problem-specific-report = #function[clojush.pushgp.report/default-problem-specific-report]
 random-screen = false
-random-seed = 2 -67 -52 123 -119 3 69 -48 106 -38 -126 -123 -38 49 -120 -53
+random-seed = 88 14 -45 119 -107 19 -22 105 91 -117 19 -5 -34 32 -8 107
 random-threshold-lexicase-probability = 1
 random-toggle-lexicase-probability = 1
 randomly-truncated-lexicase-probability = 1
@@ -192,49 +197,49 @@ Epsilons for epsilon lexicase: (0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; -*- Report at generation 0
 --- Lexicase Program with Most Elite Cases Statistics ---
-Lexicase best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1755, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3841, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3989, :close 1} {:instruction string_dup_times} {:instruction boolean_not} {:instruction vector_integer_indexof} {:instruction exec_dup} {:instruction print_vector_float} {:instruction float_dup_items} {:instruction vector_boolean_last} {:instruction vector_string_dup})
-Lexicase best program: ((float_fromdatatable -1755) (float_fromdatatable 3841) (float_fromdatatable 3989) string_dup_times boolean_not vector_integer_indexof exec_dup (print_vector_float float_dup_items vector_boolean_last vector_string_dup))
+Lexicase best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 643, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1733, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 349, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3403, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1021, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2693, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -489, :close 1} {:instruction string_empty} {:instruction gtm_write_instruction} {:instruction zip_append_child_fromcode} {:instruction char_yank} {:instruction exec_y} {:instruction exec_yank} {:instruction 75} {:instruction genome_uniform_close_mutation} {:instruction print_vector_float} {:instruction code_list} {:instruction char_iswhitespace} {:instruction vector_integer_conj} {:instruction string_emptystring} {:instruction boolean_or} {:instruction boolean_not} {:instruction vector_integer_length} {:instruction genome_close_inc} {:instruction vector_boolean_rest} {:instruction char_dup_times} {:instruction code_fromziprights} {:instruction zip_insert_left_fromexec} {:instruction float_mod} {:instruction vector_string_indexof} {:instruction vector_string_nth} {:instruction code_yank} {:instruction integer_fromchar} {:instruction genome_uniform_instruction_mutation} {:instruction vector_string_occurrencesof} {:instruction vector_integer_remove} {:instruction string_occurrencesofchar} {:instruction exec_rot} {:instruction zip_right} {:instruction vector_string_dup_times} {:instruction vector_integer_yank})
+Lexicase best program: ((float_fromdatatable 643) (float_fromdatatable -1733) (float_fromdatatable 349) (float_fromdatatable 3403) (float_fromdatatable -1021) (float_fromdatatable -2693) (float_fromdatatable -489) string_empty gtm_write_instruction zip_append_child_fromcode char_yank exec_y (exec_yank 75 genome_uniform_close_mutation print_vector_float code_list char_iswhitespace vector_integer_conj string_emptystring boolean_or boolean_not vector_integer_length genome_close_inc vector_boolean_rest char_dup_times code_fromziprights zip_insert_left_fromexec (float_mod vector_string_indexof vector_string_nth code_yank integer_fromchar genome_uniform_instruction_mutation vector_string_occurrencesof vector_integer_remove string_occurrencesofchar exec_rot (zip_right vector_string_dup_times vector_integer_yank) () ())))
 Lexicase best partial simplification: ()
 Lexicase best errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Lexicase best number of elite cases: 1520
 Lexicase best total error: 1520000000000000
 Lexicase best mean error: 1.0E12
-Lexicase best size: 19
-Percent parens: 0.263
+Lexicase best size: 61
+Percent parens: 0.213
 --- Lexicase Program with Most Zero Cases Statistics ---
-Zero cases best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1755, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3841, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3989, :close 1} {:instruction string_dup_times} {:instruction boolean_not} {:instruction vector_integer_indexof} {:instruction exec_dup} {:instruction print_vector_float} {:instruction float_dup_items} {:instruction vector_boolean_last} {:instruction vector_string_dup})
-Zero cases best program: ((float_fromdatatable -1755) (float_fromdatatable 3841) (float_fromdatatable 3989) string_dup_times boolean_not vector_integer_indexof exec_dup (print_vector_float float_dup_items vector_boolean_last vector_string_dup))
+Zero cases best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 643, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1733, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 349, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3403, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1021, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2693, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -489, :close 1} {:instruction string_empty} {:instruction gtm_write_instruction} {:instruction zip_append_child_fromcode} {:instruction char_yank} {:instruction exec_y} {:instruction exec_yank} {:instruction 75} {:instruction genome_uniform_close_mutation} {:instruction print_vector_float} {:instruction code_list} {:instruction char_iswhitespace} {:instruction vector_integer_conj} {:instruction string_emptystring} {:instruction boolean_or} {:instruction boolean_not} {:instruction vector_integer_length} {:instruction genome_close_inc} {:instruction vector_boolean_rest} {:instruction char_dup_times} {:instruction code_fromziprights} {:instruction zip_insert_left_fromexec} {:instruction float_mod} {:instruction vector_string_indexof} {:instruction vector_string_nth} {:instruction code_yank} {:instruction integer_fromchar} {:instruction genome_uniform_instruction_mutation} {:instruction vector_string_occurrencesof} {:instruction vector_integer_remove} {:instruction string_occurrencesofchar} {:instruction exec_rot} {:instruction zip_right} {:instruction vector_string_dup_times} {:instruction vector_integer_yank})
+Zero cases best program: ((float_fromdatatable 643) (float_fromdatatable -1733) (float_fromdatatable 349) (float_fromdatatable 3403) (float_fromdatatable -1021) (float_fromdatatable -2693) (float_fromdatatable -489) string_empty gtm_write_instruction zip_append_child_fromcode char_yank exec_y (exec_yank 75 genome_uniform_close_mutation print_vector_float code_list char_iswhitespace vector_integer_conj string_emptystring boolean_or boolean_not vector_integer_length genome_close_inc vector_boolean_rest char_dup_times code_fromziprights zip_insert_left_fromexec (float_mod vector_string_indexof vector_string_nth code_yank integer_fromchar genome_uniform_instruction_mutation vector_string_occurrencesof vector_integer_remove string_occurrencesofchar exec_rot (zip_right vector_string_dup_times vector_integer_yank) () ())))
 Zero cases best partial simplification: ()
 Zero cases best errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Zero cases best number of elite cases: 1520
 Zero cases best number of zero cases: 0
 Zero cases best total error: 1520000000000000
 Zero cases best mean error: 1.0E12
-Zero cases best size: 19
-Percent parens: 0.263
+Zero cases best size: 61
+Percent parens: 0.213
 --- Lexicase Population Statistics ---
 Count of elite individuals by case: (10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 ...)
 Population mean number of elite cases: 1520.00
 Count of perfect (error zero) individuals by case: (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ...)
 Population mean number of perfect (error zero) cases: 0.00
 --- Best Program (based on total-error) Statistics ---
-Best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3975, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -497, :close 1} {:instruction vector_integer_length} {:instruction zip_pop} {:instruction vector_integer_flush} {:instruction 27} {:instruction exec_yankdup} {:instruction vector_string_concat} {:instruction string_split} {:instruction float_lte} {:instruction zip_flush} {:instruction code_fromfloat} {:instruction float_fromboolean} {:instruction exec_string_iterate} {:instruction float_shove} {:instruction genome_uniform_instruction_mutation} {:instruction boolean_shove} {:instruction code_map} {:instruction zip_empty} {:instruction environment_begin} {:instruction vector_integer_set} {:instruction vector_string_stackdepth} {:instruction code_fromfloat})
-Best program: ((float_fromdatatable 3975) (float_fromdatatable -497) vector_integer_length zip_pop vector_integer_flush 27 exec_yankdup vector_string_concat string_split float_lte zip_flush code_fromfloat float_fromboolean exec_string_iterate (float_shove genome_uniform_instruction_mutation boolean_shove code_map zip_empty environment_begin vector_integer_set vector_string_stackdepth code_fromfloat))
+Best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2315, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2269, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -365, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1855, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1039, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3937, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3273, :close 1} {:instruction gtm_dub1} {:instruction zip_dup_items} {:instruction integer_lt} {:instruction vector_boolean_rest} {:instruction float_cos} {:instruction zip_rot} {:instruction integer_div} {:instruction genome_uniform_integer_mutation} {:instruction vector_string_nth} {:instruction string_take} {:instruction float_swap} {:instruction vector_string_indexof} {:instruction exec_do*vector_boolean} {:instruction genome_gene_replace} {:instruction string_take} {:instruction string_fromboolean} {:instruction boolean_yankdup} {:instruction boolean_pop} {:instruction code_wrap} {:instruction integer_untag_instruction} {:instruction vector_integer_rot} {:instruction string_nth} {:instruction boolean_swap} {:instruction code_atom} {:instruction integer_yank} {:instruction zip_dup_times} {:instruction exec_swap} {:instruction code_fromzipchildren} {:instruction vector_string_replace} {:instruction integer_stackdepth} {:instruction zip_left} {:instruction environment_end} {:instruction string_nth} {:instruction vector_boolean_remove} {:instruction char_flush} {:instruction vector_integer_shove} {:instruction integer_shove} {:instruction code_fromziplefts} {:instruction zip_replace_fromcode} {:instruction zip_pop} {:instruction char_isdigit} {:instruction char_yank} {:instruction vector_float_replace} {:instruction vector_boolean_butlast} {:instruction float_shove} {:instruction vector_string_pushall} {:instruction vector_boolean_eq} {:instruction exec_shove} {:instruction exec_rot} {:instruction exec_do*times})
+Best program: ((float_fromdatatable 2315) (float_fromdatatable 2269) (float_fromdatatable -365) (float_fromdatatable 1855) (float_fromdatatable 1039) (float_fromdatatable 3937) (float_fromdatatable -3273) gtm_dub1 zip_dup_items integer_lt vector_boolean_rest float_cos zip_rot integer_div genome_uniform_integer_mutation vector_string_nth string_take float_swap vector_string_indexof exec_do*vector_boolean (genome_gene_replace string_take string_fromboolean boolean_yankdup boolean_pop code_wrap integer_untag_instruction vector_integer_rot string_nth boolean_swap code_atom integer_yank zip_dup_times exec_swap (code_fromzipchildren vector_string_replace integer_stackdepth zip_left environment_end string_nth vector_boolean_remove char_flush vector_integer_shove integer_shove code_fromziplefts zip_replace_fromcode zip_pop char_isdigit char_yank vector_float_replace vector_boolean_butlast float_shove vector_string_pushall vector_boolean_eq exec_shove (exec_rot (exec_do*times ()) () ())) ()))
 Partial simplification: ()
 Errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Total: 1520000000000000
 Mean: 1.0E12
-Genome size: 27
-Size: 29
-Percent parens: 0.138
+Genome size: 71
+Size: 80
+Percent parens: 0.200
 --- Population Statistics ---
 Average total errors in population: 1.52E15
 Median total errors in population: 1520000000000000
 Error averages by case: (1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 ...)
 Error minima by case: (1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...)
-Average genome size in population (length): 30.7
-Average program size in population (points): 32.8
-Average percent parens in population: 0.222
+Average genome size in population (length): 41.6
+Average program size in population (points): 45.0
+Average percent parens in population: 0.189
 Minimum age in population: 0.0
 Maximum age in population: 0.0
 Average age in population: 0.0
@@ -244,10 +249,10 @@ Maximum grain-size in population: 1.0
 Average grain-size in population: 1.0
 Median grain-size in population: 1.0
 --- Population Diversity Statistics ---
-Min copy number of one Plush genome: 1
-Median copy number of one Plush genome: 1
-Max copy number of one Plush genome: 1
-Genome diversity (% unique Plush genomes):	 1.0
+Min copy number of one genome: 1
+Median copy number of one genome: 1
+Max copy number of one genome: 1
+Genome diversity (% unique genomes):	 1.0
 Min copy number of one Push program: 1
 Median copy number of one Push program: 1
 Max copy number of one Push program: 1
@@ -256,9 +261,9 @@ Total error diversity:				 0.1
 Error (vector) diversity:			 0.1
 --- Run Statistics ---
 Number of program evaluations used so far: 10
-Number of point (instruction) evaluations so far: 107856160
+Number of point (instruction) evaluations so far: 73159120
 --- Timings ---
-Current time: 1536988184705 milliseconds
+Current time: 1537059176163 milliseconds
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; -*- End of report for generation 0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -272,62 +277,62 @@ Epsilons for epsilon lexicase: (0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; -*- Report at generation 1
 --- Lexicase Program with Most Elite Cases Statistics ---
-Lexicase best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -153, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -55, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -4043, :close 1})
-Lexicase best program: ((float_fromdatatable -153) (float_fromdatatable -55) (float_fromdatatable -4043))
+Lexicase best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3741, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1139, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3685, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3447, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2695, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2299, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 729, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 617, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2725, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1911, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3177, :close 1} {:instruction noop_open_paren})
+Lexicase best program: ((float_fromdatatable 3741) (float_fromdatatable -1139) (float_fromdatatable 3685) (float_fromdatatable -3447) (float_fromdatatable 2695) (float_fromdatatable -2299) (float_fromdatatable 729) (float_fromdatatable 617) (float_fromdatatable 2725) (float_fromdatatable -1911) (float_fromdatatable 3177) ())
 Lexicase best partial simplification: ()
 Lexicase best errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Lexicase best number of elite cases: 1520
 Lexicase best total error: 1520000000000000
 Lexicase best mean error: 1.0E12
-Lexicase best size: 10
-Percent parens: 0.400
+Lexicase best size: 35
+Percent parens: 0.371
 --- Lexicase Program with Most Zero Cases Statistics ---
-Zero cases best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -153, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -55, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -4043, :close 1})
-Zero cases best program: ((float_fromdatatable -153) (float_fromdatatable -55) (float_fromdatatable -4043))
+Zero cases best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3741, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1139, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3685, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3447, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2695, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2299, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 729, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 617, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2725, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1911, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3177, :close 1} {:instruction noop_open_paren})
+Zero cases best program: ((float_fromdatatable 3741) (float_fromdatatable -1139) (float_fromdatatable 3685) (float_fromdatatable -3447) (float_fromdatatable 2695) (float_fromdatatable -2299) (float_fromdatatable 729) (float_fromdatatable 617) (float_fromdatatable 2725) (float_fromdatatable -1911) (float_fromdatatable 3177) ())
 Zero cases best partial simplification: ()
 Zero cases best errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Zero cases best number of elite cases: 1520
 Zero cases best number of zero cases: 0
 Zero cases best total error: 1520000000000000
 Zero cases best mean error: 1.0E12
-Zero cases best size: 10
-Percent parens: 0.400
+Zero cases best size: 35
+Percent parens: 0.371
 --- Lexicase Population Statistics ---
 Count of elite individuals by case: (10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 ...)
 Population mean number of elite cases: 1520.00
 Count of perfect (error zero) individuals by case: (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ...)
 Population mean number of perfect (error zero) cases: 0.00
 --- Best Program (based on total-error) Statistics ---
-Best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3557, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -981, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3523, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 481, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 729, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3885, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1173, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2043, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -837, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 77, :close 1} {:instruction print_float} {:instruction string_nth} {:instruction vector_string_set} {:instruction string_conjchar} {:instruction exec_y} {:instruction boolean_shove} {:instruction code_dup})
-Best program: ((float_fromdatatable -3557) (float_fromdatatable -981) (float_fromdatatable -3523) (float_fromdatatable 481) (float_fromdatatable 729) (float_fromdatatable 3885) (float_fromdatatable -1173) (float_fromdatatable 2043) (float_fromdatatable -837) (float_fromdatatable 77) print_float string_nth vector_string_set string_conjchar exec_y (boolean_shove code_dup))
+Best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1219, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3211, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 371, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 781, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3137, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1013, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1239, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1951, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -671, :close 1} {:instruction boolean_dup_times} {:instruction vector_boolean_shove} {:instruction zip_shove})
+Best program: ((float_fromdatatable -1219) (float_fromdatatable -3211) (float_fromdatatable 371) (float_fromdatatable 781) (float_fromdatatable 3137) (float_fromdatatable -1013) (float_fromdatatable 1239) (float_fromdatatable 1951) (float_fromdatatable -671) boolean_dup_times vector_boolean_shove zip_shove)
 Partial simplification: ()
 Errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Total: 1520000000000000
 Mean: 1.0E12
-Genome size: 37
-Size: 39
-Percent parens: 0.308
+Genome size: 30
+Size: 31
+Percent parens: 0.323
 --- Population Statistics ---
 Average total errors in population: 1.52E15
 Median total errors in population: 1520000000000000
 Error averages by case: (1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 ...)
 Error minima by case: (1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...)
-Average genome size in population (length): 44.2
-Average program size in population (points): 45.9
-Average percent parens in population: 0.309
-Minimum age in population: 1.0
+Average genome size in population (length): 34.4
+Average program size in population (points): 36.1
+Average percent parens in population: 0.299
+Minimum age in population: 0.0
 Maximum age in population: 1.0
-Average age in population: 1.0
+Average age in population: 0.7
 Median age in population: 1.0
 Minimum grain-size in population: 1.0
 Maximum grain-size in population: 1.0
 Average grain-size in population: 1.0
 Median grain-size in population: 1.0
 --- Population Diversity Statistics ---
-Min copy number of one Plush genome: 1
-Median copy number of one Plush genome: 1
-Max copy number of one Plush genome: 1
-Genome diversity (% unique Plush genomes):	 1.0
+Min copy number of one genome: 1
+Median copy number of one genome: 1
+Max copy number of one genome: 1
+Genome diversity (% unique genomes):	 1.0
 Min copy number of one Push program: 1
 Median copy number of one Push program: 1
 Max copy number of one Push program: 1
@@ -336,9 +341,9 @@ Total error diversity:				 0.1
 Error (vector) diversity:			 0.1
 --- Run Statistics ---
 Number of program evaluations used so far: 20
-Number of point (instruction) evaluations so far: 236562160
+Number of point (instruction) evaluations so far: 169679120
 --- Timings ---
-Current time: 1536999356236 milliseconds
+Current time: 1537066948183 milliseconds
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; -*- End of report for generation 1
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -352,62 +357,62 @@ Epsilons for epsilon lexicase: (0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; -*- Report at generation 2
 --- Lexicase Program with Most Elite Cases Statistics ---
-Lexicase best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2811, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -949, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1287, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1525, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 333, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1461, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2933, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2419, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2859, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2875, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1379, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 193, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2315, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3837, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3325, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3927, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3117, :close 1} {:instruction vector_boolean_nth} {:instruction float_fromdatatable} {:instruction 3535, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1807, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 81, :close 1} {:instruction noop_open_paren} {:instruction zip_left} {:instruction -3771, :close 1} {:instruction vector_integer_eq} {:instruction vector_string_dup_times})
-Lexicase best program: ((float_fromdatatable -2811) (float_fromdatatable -949) (float_fromdatatable 1287) (float_fromdatatable 1525) (float_fromdatatable 333) (float_fromdatatable 1461) (float_fromdatatable -2933) (float_fromdatatable 2419) (float_fromdatatable -2859) (float_fromdatatable -2875) (float_fromdatatable 1379) (float_fromdatatable 193) (float_fromdatatable -2315) (float_fromdatatable 3837) (float_fromdatatable 3325) (float_fromdatatable 3927) (float_fromdatatable 3117) vector_boolean_nth float_fromdatatable 3535 (float_fromdatatable -1807) (float_fromdatatable 81) (zip_left -3771) vector_integer_eq vector_string_dup_times)
+Lexicase best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 659, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1715, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3895, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1497, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -181, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2737, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -735, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2813, :close 1} {:instruction noop_open_paren} {:instruction vector_integer_emptyvector} {:instruction 1663, :close 1} {:instruction vector_string_pushall} {:instruction float_fromdatatable} {:instruction 3655, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1431, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1449, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1633, :close 1} {:instruction noop_open_paren} {:instruction vector_float_first} {:instruction -2725, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2315, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2269, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -365, :close 1} {:instruction boolean_frominteger} {:instruction exec_flush} {:instruction code_dup_times} {:instruction string_indexofchar} {:instruction boolean_dup_items} {:instruction exec_y_when_autoconstructing} {:instruction genome_uniform_silence_mutation})
+Lexicase best program: ((float_fromdatatable 659) (float_fromdatatable -1715) (float_fromdatatable 3895) (float_fromdatatable 1497) (float_fromdatatable -181) (float_fromdatatable -2737) (float_fromdatatable -735) (float_fromdatatable -2813) (vector_integer_emptyvector 1663) vector_string_pushall float_fromdatatable 3655 (float_fromdatatable 1431) (float_fromdatatable 1449) (float_fromdatatable -1633) (vector_float_first -2725) (float_fromdatatable 2315) (float_fromdatatable 2269) (float_fromdatatable -365) boolean_frominteger exec_flush code_dup_times string_indexofchar boolean_dup_items exec_y_when_autoconstructing (genome_uniform_silence_mutation))
 Lexicase best partial simplification: ()
 Lexicase best errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Lexicase best number of elite cases: 1520
 Lexicase best total error: 1520000000000000
 Lexicase best mean error: 1.0E12
-Lexicase best size: 66
-Percent parens: 0.318
+Lexicase best size: 60
+Percent parens: 0.300
 --- Lexicase Program with Most Zero Cases Statistics ---
-Zero cases best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2811, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -949, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1287, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1525, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 333, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1461, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2933, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2419, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2859, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2875, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1379, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 193, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2315, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3837, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3325, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3927, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3117, :close 1} {:instruction vector_boolean_nth} {:instruction float_fromdatatable} {:instruction 3535, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1807, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 81, :close 1} {:instruction noop_open_paren} {:instruction zip_left} {:instruction -3771, :close 1} {:instruction vector_integer_eq} {:instruction vector_string_dup_times})
-Zero cases best program: ((float_fromdatatable -2811) (float_fromdatatable -949) (float_fromdatatable 1287) (float_fromdatatable 1525) (float_fromdatatable 333) (float_fromdatatable 1461) (float_fromdatatable -2933) (float_fromdatatable 2419) (float_fromdatatable -2859) (float_fromdatatable -2875) (float_fromdatatable 1379) (float_fromdatatable 193) (float_fromdatatable -2315) (float_fromdatatable 3837) (float_fromdatatable 3325) (float_fromdatatable 3927) (float_fromdatatable 3117) vector_boolean_nth float_fromdatatable 3535 (float_fromdatatable -1807) (float_fromdatatable 81) (zip_left -3771) vector_integer_eq vector_string_dup_times)
+Zero cases best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 659, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1715, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3895, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1497, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -181, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2737, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -735, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2813, :close 1} {:instruction noop_open_paren} {:instruction vector_integer_emptyvector} {:instruction 1663, :close 1} {:instruction vector_string_pushall} {:instruction float_fromdatatable} {:instruction 3655, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1431, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1449, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1633, :close 1} {:instruction noop_open_paren} {:instruction vector_float_first} {:instruction -2725, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2315, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2269, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -365, :close 1} {:instruction boolean_frominteger} {:instruction exec_flush} {:instruction code_dup_times} {:instruction string_indexofchar} {:instruction boolean_dup_items} {:instruction exec_y_when_autoconstructing} {:instruction genome_uniform_silence_mutation})
+Zero cases best program: ((float_fromdatatable 659) (float_fromdatatable -1715) (float_fromdatatable 3895) (float_fromdatatable 1497) (float_fromdatatable -181) (float_fromdatatable -2737) (float_fromdatatable -735) (float_fromdatatable -2813) (vector_integer_emptyvector 1663) vector_string_pushall float_fromdatatable 3655 (float_fromdatatable 1431) (float_fromdatatable 1449) (float_fromdatatable -1633) (vector_float_first -2725) (float_fromdatatable 2315) (float_fromdatatable 2269) (float_fromdatatable -365) boolean_frominteger exec_flush code_dup_times string_indexofchar boolean_dup_items exec_y_when_autoconstructing (genome_uniform_silence_mutation))
 Zero cases best partial simplification: ()
 Zero cases best errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Zero cases best number of elite cases: 1520
 Zero cases best number of zero cases: 0
 Zero cases best total error: 1520000000000000
 Zero cases best mean error: 1.0E12
-Zero cases best size: 66
-Percent parens: 0.318
+Zero cases best size: 60
+Percent parens: 0.300
 --- Lexicase Population Statistics ---
 Count of elite individuals by case: (10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 ...)
 Population mean number of elite cases: 1520.00
 Count of perfect (error zero) individuals by case: (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ...)
 Population mean number of perfect (error zero) cases: 0.00
 --- Best Program (based on total-error) Statistics ---
-Best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2059, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2375, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3611, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1605, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3851, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 183, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3087, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -815, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3093, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 4033, :close 1} {:instruction vector_boolean_swap} {:instruction float_fromdatatable} {:instruction 3463, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -233, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 174, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2890, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2369, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 19, :close 1} {:instruction zip_insert_child_fromcode} {:instruction float_fromdatatable} {:instruction -1755, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3841, :close 1} {:instruction code_do*} {:instruction float_fromdatatable} {:instruction 3989, :close 1} {:instruction string_dup_times} {:instruction string_indexofchar} {:instruction vector_integer_indexof} {:instruction char_yankdup} {:instruction exec_empty} {:instruction float_dup_items} {:instruction gtm_write_instruction} {:instruction vector_string_dup})
-Best program: ((float_fromdatatable 2059) (float_fromdatatable -2375) (float_fromdatatable 3611) (float_fromdatatable -1605) (float_fromdatatable -3851) (float_fromdatatable 183) (float_fromdatatable -3087) (float_fromdatatable -815) (float_fromdatatable -3093) (float_fromdatatable 4033) vector_boolean_swap float_fromdatatable 3463 (float_fromdatatable -233) (float_fromdatatable 174) (float_fromdatatable 2890) (float_fromdatatable -2369) (float_fromdatatable 19) zip_insert_child_fromcode float_fromdatatable -1755 (float_fromdatatable 3841) code_do* float_fromdatatable 3989 string_dup_times string_indexofchar vector_integer_indexof char_yankdup exec_empty float_dup_items gtm_write_instruction vector_string_dup)
+Best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3929, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2225, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1835, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2975, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 481, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2839, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1321, :close 1} {:instruction vector_boolean_nth} {:instruction code_stackdepth} {:instruction zip_flush} {:instruction print_float} {:instruction exec_y} {:instruction code_extract} {:instruction zip_append_child_fromcode} {:instruction float_eq} {:instruction gtm_erase} {:instruction vector_string_occurrencesof} {:instruction float_eq})
+Best program: ((float_fromdatatable 3929) (float_fromdatatable 2225) (float_fromdatatable -1835) (float_fromdatatable 2975) (float_fromdatatable 481) (float_fromdatatable -2839) (float_fromdatatable -1321) vector_boolean_nth code_stackdepth zip_flush print_float exec_y (code_extract zip_append_child_fromcode float_eq gtm_erase vector_string_occurrencesof float_eq))
 Partial simplification: ()
 Errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Total: 1520000000000000
 Mean: 1.0E12
-Genome size: 65
-Size: 66
-Percent parens: 0.258
+Genome size: 32
+Size: 34
+Percent parens: 0.265
 --- Population Statistics ---
 Average total errors in population: 1.52E15
 Median total errors in population: 1520000000000000
 Error averages by case: (1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 ...)
 Error minima by case: (1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...)
-Average genome size in population (length): 40.3
-Average program size in population (points): 42.2
-Average percent parens in population: 0.332
+Average genome size in population (length): 33.8
+Average program size in population (points): 35.6
+Average percent parens in population: 0.329
 Minimum age in population: 0.0
 Maximum age in population: 2.0
-Average age in population: 1.8
-Median age in population: 2.0
+Average age in population: 1.45
+Median age in population: 1.75
 Minimum grain-size in population: 1.0
 Maximum grain-size in population: 1.0
 Average grain-size in population: 1.0
 Median grain-size in population: 1.0
 --- Population Diversity Statistics ---
-Min copy number of one Plush genome: 1
-Median copy number of one Plush genome: 1
-Max copy number of one Plush genome: 1
-Genome diversity (% unique Plush genomes):	 1.0
+Min copy number of one genome: 1
+Median copy number of one genome: 1
+Max copy number of one genome: 1
+Genome diversity (% unique genomes):	 1.0
 Min copy number of one Push program: 1
 Median copy number of one Push program: 1
 Max copy number of one Push program: 1
@@ -416,9 +421,9 @@ Total error diversity:				 0.1
 Error (vector) diversity:			 0.1
 --- Run Statistics ---
 Number of program evaluations used so far: 30
-Number of point (instruction) evaluations so far: 316381920
+Number of point (instruction) evaluations so far: 249386400
 --- Timings ---
-Current time: 1537010421160 milliseconds
+Current time: 1537075466130 milliseconds
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; -*- End of report for generation 2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -432,62 +437,62 @@ Epsilons for epsilon lexicase: (0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; -*- Report at generation 3
 --- Lexicase Program with Most Elite Cases Statistics ---
-Lexicase best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3945, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3747, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2695, :close 1} {:instruction integer_tag_exec_instruction} {:instruction float_fromdatatable} {:instruction -1263, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2875, :close 1})
-Lexicase best program: ((float_fromdatatable 3945) (float_fromdatatable 3747) (float_fromdatatable -2695) integer_tag_exec_instruction float_fromdatatable -1263 (float_fromdatatable -2875))
+Lexicase best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3963, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3379, :close 1} {:instruction zip_branch?} {:instruction gtm_dub1})
+Lexicase best program: ((float_fromdatatable 3963) (float_fromdatatable -3379) zip_branch? gtm_dub1)
 Lexicase best partial simplification: ()
 Lexicase best errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Lexicase best number of elite cases: 1520
 Lexicase best total error: 1520000000000000
 Lexicase best mean error: 1.0E12
-Lexicase best size: 16
-Percent parens: 0.313
+Lexicase best size: 9
+Percent parens: 0.333
 --- Lexicase Program with Most Zero Cases Statistics ---
-Zero cases best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3945, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3747, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2695, :close 1} {:instruction integer_tag_exec_instruction} {:instruction float_fromdatatable} {:instruction -1263, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2875, :close 1})
-Zero cases best program: ((float_fromdatatable 3945) (float_fromdatatable 3747) (float_fromdatatable -2695) integer_tag_exec_instruction float_fromdatatable -1263 (float_fromdatatable -2875))
+Zero cases best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3963, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3379, :close 1} {:instruction zip_branch?} {:instruction gtm_dub1})
+Zero cases best program: ((float_fromdatatable 3963) (float_fromdatatable -3379) zip_branch? gtm_dub1)
 Zero cases best partial simplification: ()
 Zero cases best errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Zero cases best number of elite cases: 1520
 Zero cases best number of zero cases: 0
 Zero cases best total error: 1520000000000000
 Zero cases best mean error: 1.0E12
-Zero cases best size: 16
-Percent parens: 0.313
+Zero cases best size: 9
+Percent parens: 0.333
 --- Lexicase Population Statistics ---
 Count of elite individuals by case: (10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 ...)
 Population mean number of elite cases: 1520.00
 Count of perfect (error zero) individuals by case: (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ...)
 Population mean number of perfect (error zero) cases: 0.00
 --- Best Program (based on total-error) Statistics ---
-Best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1451, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -2971, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1213, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3785, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3557, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction vector_float_empty, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3523, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 481, :close 1} {:instruction genome_instruction_eq} {:instruction float_fromdatatable} {:instruction 729, :close 1} {:instruction print_vector_float} {:instruction float_fromdatatable} {:instruction 3885, :close 1} {:instruction noop_open_paren} {:instruction vector_integer_pop} {:instruction -1173, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2043, :close 1} {:instruction vector_integer_occurrencesof} {:instruction float_fromdatatable} {:instruction -837, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 80, :close 1} {:instruction print_float} {:instruction string_nth} {:instruction vector_string_set} {:instruction string_conjchar} {:instruction exec_y} {:instruction boolean_shove} {:instruction code_dup})
-Best program: ((float_fromdatatable -1451) (float_fromdatatable -2971) (float_fromdatatable -1213) (float_fromdatatable 3785) (float_fromdatatable -3557) (float_fromdatatable vector_float_empty) (float_fromdatatable -3523) (float_fromdatatable 481) genome_instruction_eq float_fromdatatable 729 print_vector_float float_fromdatatable 3885 (vector_integer_pop -1173) (float_fromdatatable 2043) vector_integer_occurrencesof float_fromdatatable -837 (float_fromdatatable 80) print_float string_nth vector_string_set string_conjchar exec_y (boolean_shove code_dup))
+Best genome: ({:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -125, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1025, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -209, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1841, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3327, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2275, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 701, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3407, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 2081, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 863, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 3561, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3433, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -1347, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction 1059, :close 1} {:instruction noop_open_paren} {:instruction float_fromdatatable} {:instruction -3409, :close 1} {:instruction noop_open_paren})
+Best program: ((float_fromdatatable -125) (float_fromdatatable 1025) (float_fromdatatable -209) (float_fromdatatable -1841) (float_fromdatatable -3327) (float_fromdatatable 2275) (float_fromdatatable 701) (float_fromdatatable 3407) (float_fromdatatable 2081) (float_fromdatatable 863) (float_fromdatatable 3561) (float_fromdatatable -3433) (float_fromdatatable -1347) (float_fromdatatable 1059) (float_fromdatatable -3409) ())
 Partial simplification: ()
 Errors: [1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...]
 Total: 1520000000000000
 Mean: 1.0E12
-Genome size: 49
-Size: 51
-Percent parens: 0.255
+Genome size: 46
+Size: 47
+Percent parens: 0.362
 --- Population Statistics ---
 Average total errors in population: 1.52E15
 Median total errors in population: 1520000000000000
 Error averages by case: (1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 1.0E12 ...)
 Error minima by case: (1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 1000000000000 ...)
-Average genome size in population (length): 35.3
-Average program size in population (points): 37.0
-Average percent parens in population: 0.313
-Minimum age in population: 0.0
+Average genome size in population (length): 34.8
+Average program size in population (points): 36.0
+Average percent parens in population: 0.357
+Minimum age in population: 2.0
 Maximum age in population: 3.0
-Average age in population: 2.5
-Median age in population: 3.0
+Average age in population: 2.6
+Median age in population: 2.625
 Minimum grain-size in population: 1.0
 Maximum grain-size in population: 1.0
 Average grain-size in population: 1.0
 Median grain-size in population: 1.0
 --- Population Diversity Statistics ---
-Min copy number of one Plush genome: 1
-Median copy number of one Plush genome: 1
-Max copy number of one Plush genome: 1
-Genome diversity (% unique Plush genomes):	 1.0
+Min copy number of one genome: 1
+Median copy number of one genome: 1
+Max copy number of one genome: 1
+Genome diversity (% unique genomes):	 1.0
 Min copy number of one Push program: 1
 Median copy number of one Push program: 1
 Max copy number of one Push program: 1
@@ -496,9 +501,9 @@ Total error diversity:				 0.1
 Error (vector) diversity:			 0.1
 --- Run Statistics ---
 Number of program evaluations used so far: 40
-Number of point (instruction) evaluations so far: 395903120
+Number of point (instruction) evaluations so far: 338570880
 --- Timings ---
-Current time: 1537021535821 milliseconds
+Current time: 1537083807659 milliseconds
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; -*- End of report for generation 3
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -506,10 +511,10 @@ Current time: 1537021535821 milliseconds
 FAILURE
 nil
 Exception updating the ns-cache #error {
- :cause Task clojure.lang.Agent$Action@5db7a7cf rejected from java.util.concurrent.ThreadPoolExecutor@5633cc73[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 362]
+ :cause Task clojure.lang.Agent$Action@2aae4d68 rejected from java.util.concurrent.ThreadPoolExecutor@260dfff[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 364]
  :via
  [{:type java.util.concurrent.RejectedExecutionException
-   :message Task clojure.lang.Agent$Action@5db7a7cf rejected from java.util.concurrent.ThreadPoolExecutor@5633cc73[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 362]
+   :message Task clojure.lang.Agent$Action@2aae4d68 rejected from java.util.concurrent.ThreadPoolExecutor@260dfff[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 364]
    :at [java.util.concurrent.ThreadPoolExecutor$AbortPolicy rejectedExecution ThreadPoolExecutor.java 2063]}]
  :trace
  [[java.util.concurrent.ThreadPoolExecutor$AbortPolicy rejectedExecution ThreadPoolExecutor.java 2063]
@@ -527,14 +532,11 @@ Exception updating the ns-cache #error {
   [clojure.core$send invokeStatic core.clj 2028]
   [clojure.core$send doInvoke core.clj 2019]
   [clojure.lang.RestFn invoke RestFn.java 490]
-  [cider.nrepl.middleware.track_state$make_transport$reify__15485 send track_state.clj 217]
-  [clojure.tools.nrepl.middleware.pr_values$pr_values$fn$reify__10860 send pr_values.clj 27]
-  [cider.nrepl.middleware.content_type$content_type_transport$reify__15726 send content_type.clj 123]
-  [clojure.tools.nrepl.middleware.interruptible_eval$interruptible_eval$fn__10939$fn__10942 invoke interruptible_eval.clj 223]
-  [clojure.tools.nrepl.middleware.interruptible_eval$run_next$fn__10934 invoke interruptible_eval.clj 190]
+  [cider.nrepl.middleware.track_state$make_transport$reify__12733 send track_state.clj 226]
+  [clojure.tools.nrepl.middleware.interruptible_eval$interruptible_eval$fn__8220$fn__8223 invoke interruptible_eval.clj 223]
+  [clojure.tools.nrepl.middleware.interruptible_eval$run_next$fn__8215 invoke interruptible_eval.clj 190]
   [clojure.lang.AFn run AFn.java 22]
-  [java.util.concurrent.ThreadPoolExecutor runWorker ThreadPoolExecutor.java
- 1149]
+  [java.util.concurrent.ThreadPoolExecutor runWorker ThreadPoolExecutor.java 1149]
   [java.util.concurrent.ThreadPoolExecutor$Worker run ThreadPoolExecutor.java 624]
   [java.lang.Thread run Thread.java 748]]}
 clojush.core> 
