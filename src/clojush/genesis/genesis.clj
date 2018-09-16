@@ -110,7 +110,6 @@
              )
         )
       state)))
-
 ;; ;;
 ;; ;; Brokerage utilities
 ;; ;;
@@ -134,22 +133,29 @@
   [brokerage-account buy-sell row]
   (let [stock-price (get-stock-price (unchecked-inc row))
         cash (:cash brokerage-account)
+        stock (:stock brokerage-account)
         fee (:transaction-fee brokerage-account)]
     (try (case (true? buy-sell) 
            true (let [quantity-to-purchase (int (/ (unchecked-subtract cash fee) stock-price))
                       total-cost (unchecked-add (unchecked-multiply stock-price quantity-to-purchase) fee)]
                   (if (and (> quantity-to-purchase 0) (>= cash total-cost))
+                    ;; (->
+                    ;;  (update brokerage-account :stock unchecked-add quantity-to-purchase)
+                    ;;  (update :cash unchecked-subtract total-cost))
                     (->
-                     (update brokerage-account :stock unchecked-add quantity-to-purchase)
-                     (update :cash unchecked-subtract total-cost))
+                      (assoc! brokerage-account :stock (unchecked-add      stock quantity-to-purchase))
+                      (assoc!                   :cash  (unchecked-subtract cash  total-cost)))
                     brokerage-account))
            
            false (let [stock (:stock brokerage-account)
                        total-gain (unchecked-subtract (unchecked-multiply stock-price stock) fee)]
                    (if (and (> stock 0) (> total-gain 0.0))
+                     ;; (->
+                     ;;  (assoc brokerage-account :stock 0)
+                     ;;  (update :cash unchecked-add total-gain))
                      (->
-                      (assoc brokerage-account :stock 0)
-                      (update :cash unchecked-add total-gain))
+                      (assoc! brokerage-account :stock 0)
+                      (assoc!                   :cash  (unchecked-add cash total-gain)))
                      brokerage-account)))
          (catch ArithmeticException e
            (do 
@@ -159,8 +165,8 @@
              (println "cash = " cash)
              (println "fee = " fee)
              (System/exit 0))))
-)
-)
+    )
+  )
 
 (defn get-brokerage-account-value [brokerage-account row]
   "Calculates the current value by creating a copy of the account with all stocks sold.  
@@ -197,7 +203,7 @@
 (defn eval-test-case 
   "Evaluates a test case by processing a year's worth of input and returns the aggregate error"
   [input-start individual]
-  (loop [brokerage-account (make-brokerage-account)
+  (loop [brokerage-account (transient (make-brokerage-account))
          row input-start]
     (let [state (run-push (:program individual)
                           (push-item row :input
