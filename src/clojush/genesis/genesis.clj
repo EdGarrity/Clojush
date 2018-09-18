@@ -204,7 +204,7 @@
   "Evaluates a test case by processing a year's worth of input and returns the aggregate error"
   [input-start individual]
   ;; (loop [brokerage-account (transient (make-brokerage-account))
-  (loop [brokerage-account (transient {:cash 0.0 :stock 0 :transaction-fee transaction-fee})
+  (loop [brokerage-account (transient {:cash 10000.0 :stock 0 :transaction-fee transaction-fee})
          row input-start]
     (let [state (run-push (:program individual)
                           (push-item row :input
@@ -266,7 +266,7 @@
 
    :use-single-thread false
    :population-size 10
-   :max-generations 3
+   :max-generations 10
    :epigenetic-markers []
    :parent-selection :epsilon-lexicase
    :genetic-operator-probabilities {:alternation 0.5
