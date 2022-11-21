@@ -81,6 +81,9 @@
       :else n)
     :else
     (cond
+      (Double/isNaN n) 0.0
+      (= n Double/POSITIVE_INFINITY) (* 1.0 max-number-magnitude)
+      (= n Double/NEGATIVE_INFINITY) (* 1.0 (- max-number-magnitude))
       (> n max-number-magnitude) (* 1.0 max-number-magnitude)
       (< n (- max-number-magnitude)) (* 1.0 (- max-number-magnitude))
       (and (< n min-number-magnitude) (> n (- min-number-magnitude))) 0.0
@@ -134,6 +137,23 @@
           (recur (list-concat (first remaining) 
                               (rest remaining)) 
                  (inc total)))))
+
+(defn height-of-nested-list
+  "Returns the height of the nested list called tree.
+  Borrowed idea from here: https://stackoverflow.com/a/36865180/2023312
+  Works by looking at the path from each node in the tree to the root, and
+  finding the longest one.
+  Note: does not treat an empty list as having any height."
+  [tree]
+  (loop [zipper (seq-zip tree)
+         height 0]
+    (if (zip/end? zipper)
+      height
+      (recur (zip/next zipper)
+             (-> zipper
+                 zip/path
+                 count
+                 (max height))))))
 
 (defn code-at-point 
   "Returns a subtree of tree indexed by point-index in a depth first traversal."
@@ -248,6 +268,12 @@
   (cons lst (if (seq? lst)
               (apply list-concat (doall (map all-items lst)))
               ())))
+
+(defn remove-one
+  "Returns sequence s without the first instance of item."
+  [item s]
+  (let [[without-item with-item] (split-with #(not (= item %)) s)]
+    (concat without-item (rest with-item))))
 
 (defn list-to-open-close-sequence
   [lst]
@@ -412,3 +438,31 @@
             top-val (nth sorted halfway)]
            (mean [bottom-val top-val])))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Function to produce proportional input and constant instructions
+
+(defn concatenate-until-threshold
+  "Utility function for make-proportional-atom-generators.
+   This repeatedly concatenates coll with itself until
+   it has at least threshold elements in it."
+  [coll threshold]
+  (loop [things coll]
+    (if (>= (count things) threshold)
+      things
+      (recur (concat things coll)))))
+
+(defn make-proportional-atom-generators
+  "Takes lists of one-each-instructions, inputs, and constants,
+   and the proportions of inputs and constants in the final set
+   as a map, and produces the final list of atom generators."
+  [one-each-instructions inputs constants
+   {:keys [proportion-inputs proportion-constants]}]
+  (let [original-instruction-count (count one-each-instructions)
+        proportional-increase (+ proportion-inputs proportion-constants)
+        final-instruction-count (/ original-instruction-count
+                                   (- 1.0 proportional-increase))
+        number-inputs (int (* proportion-inputs final-instruction-count))
+        number-constants (int (* proportion-constants final-instruction-count))
+        inputs-final (concatenate-until-threshold inputs number-inputs)
+        constants-final (concatenate-until-threshold constants number-constants)]
+    (concat one-each-instructions inputs-final constants-final)))
